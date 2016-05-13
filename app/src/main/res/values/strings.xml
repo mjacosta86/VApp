@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">VApp</string>
+    <string name="action_settings">Settings</string>
+    <string name="base">Base</string>
+
+    <string name="MENU_PEOPLE">People</string>
+    <string name="MENU_COPYRIGHT">Copyright</string>
+    <string name="MENU_TOOLS">Tools</string>
+    <string name="MENU_DOWN">Down</string>
+    <string name="MENU_BUG">Bug</string>
+    <string name="MENU_ANDROID">Android</string>
+    <string name="MENU_INFO">Info</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="title_activity_tabbed">TabbedActivity</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+</resources>

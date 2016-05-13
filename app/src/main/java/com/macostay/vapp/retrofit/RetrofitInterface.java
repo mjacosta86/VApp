@@ -1,0 +1,44 @@
+package com.macostay.vapp.retrofit;
+
+
+import com.macostay.vapp.models.Actions;
+import com.macostay.vapp.models.Agenda;
+import com.macostay.vapp.models.Cliente;
+import com.macostay.vapp.models.ContactData;
+import com.macostay.vapp.models.Events;
+import com.macostay.vapp.models.News;
+import com.macostay.vapp.models.Questions;
+
+import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.http.GET;
+
+/**
+ * Created by macostay on 04/05/2016.
+ */
+public interface RetrofitInterface {
+
+    //Aqui irían todos los callbacks para cada una de las peticiones
+
+    @GET(RetrofitApi.CLIENTES)//recurso
+    Call<List<Cliente>> getCliente();
+
+    @GET(RetrofitApi.EVENTS)//recurso
+    Call<Events> getEvents();
+
+    @GET(RetrofitApi.ACTIONS)//recurso
+    Call<Actions> getActions();
+
+    @GET(RetrofitApi.AGENDA)//AgendaItem
+    Call<Agenda> getAgenda();
+
+    @GET(RetrofitApi.CONTACT_DATA)//Contact Data
+    Call<ContactData> getContactData();
+
+    @GET(RetrofitApi.GAMING)//Gaming
+    Call<Questions> getGaming();
+
+    @GET(RetrofitApi.NEWS)//Noticias
+    Call<News> getNews();
+}
