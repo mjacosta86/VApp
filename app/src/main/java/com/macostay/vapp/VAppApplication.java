@@ -1,7 +1,6 @@
 package com.macostay.vapp;
 
 import android.app.Application;
-
 import com.macostay.vapp.retrofit.RetrofitApi;
 
 /**

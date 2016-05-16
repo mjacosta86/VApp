@@ -2,9 +2,7 @@ package com.macostay.vapp.fragments;
 
 import android.os.Bundle;
 import android.widget.TextView;
-
 import com.macostay.vapp.R;
-
 import butterknife.Bind;
 
 /**

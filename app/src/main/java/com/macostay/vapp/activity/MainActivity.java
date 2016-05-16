@@ -14,7 +14,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.FrameLayout;
 import android.widget.Toast;
-
 import com.macostay.vapp.R;
 import com.macostay.vapp.VAppApplication;
 import com.macostay.vapp.dialogs.DialogoConfirmacion;
@@ -31,9 +30,7 @@ import com.macostay.vapp.models.Events;
 import com.macostay.vapp.models.News;
 import com.macostay.vapp.models.Questions;
 import com.macostay.vapp.retrofit.RetrofitListener;
-
 import java.util.List;
-
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import retrofit2.Response;
@@ -70,6 +67,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_CLOSE)
                 .commit();
 
+//        Retrofit Tests
 //        Clientes();
 //        Events();
 //        Actions();
@@ -128,10 +126,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                     .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_CLOSE)
                     .commit();
         }else if (id == R.id.menu_tabs) {
-//            getSupportFragmentManager().beginTransaction()
-//                    .replace(R.id.flMainContainer, EventFragment.newInstance())
-//                    .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_CLOSE)
-//                    .commit();
             getSupportFragmentManager().beginTransaction()
                     .replace(R.id.flMainContainer, TabsFragment.newInstance())
                     .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_CLOSE)
@@ -153,6 +147,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         return super.onKeyDown(keyCode, event);
     }
 
+//    Métodos Retrofit
     public void Clientes(){
         VAppApplication.getRetrofitApi().getClientes(new RetrofitListener.ResponseListener<Response<List<Cliente>>>() {
             @Override

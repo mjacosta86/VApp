@@ -7,10 +7,8 @@ import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
 import com.macostay.vapp.R;
 import com.macostay.vapp.adapters.TabsPagerAdapter;
-
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
@@ -47,7 +45,6 @@ public class TabsFragment extends BaseFragment {
 
     @Override
     public void loadUITexts() {
-
     }
 
     @Override

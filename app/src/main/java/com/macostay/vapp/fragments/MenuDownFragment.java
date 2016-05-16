@@ -8,10 +8,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.Toast;
-
 import com.krpiotrek.library.BottomNavigation;
 import com.macostay.vapp.R;
-
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
