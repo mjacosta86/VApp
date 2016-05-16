@@ -8,9 +8,9 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import com.macostay.vapp.R;
+
 import com.socks.library.KLog;
-import butterknife.Bind;
+
 import butterknife.ButterKnife;
 
 /**

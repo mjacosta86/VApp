@@ -18,6 +18,10 @@
             android:id="@+id/menu_down"
             android:icon="@drawable/ic_menu_black_24dp"
             android:title="@string/MENU_DOWN" />
+        <item
+            android:id="@+id/menu_tabs"
+            android:icon="@drawable/ic_tab_black_24dp"
+            android:title="@string/MENU_TABS" />
 
     </group>
 

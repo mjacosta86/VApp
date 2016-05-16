@@ -17,10 +17,11 @@ import android.widget.Toast;
 
 import com.macostay.vapp.R;
 import com.macostay.vapp.VAppApplication;
-import com.macostay.vapp.fragments.CopyrightFragment;
 import com.macostay.vapp.dialogs.DialogoConfirmacion;
+import com.macostay.vapp.fragments.CopyrightFragment;
 import com.macostay.vapp.fragments.MenuDownFragment;
 import com.macostay.vapp.fragments.PeopleFragment;
+import com.macostay.vapp.fragments.TabsFragment;
 import com.macostay.vapp.fragments.ToolsFragment;
 import com.macostay.vapp.models.Actions;
 import com.macostay.vapp.models.Agenda;
@@ -124,6 +125,15 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         } else if (id == R.id.menu_down) {
             getSupportFragmentManager().beginTransaction()
                     .replace(R.id.flMainContainer, MenuDownFragment.newInstance())
+                    .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_CLOSE)
+                    .commit();
+        }else if (id == R.id.menu_tabs) {
+//            getSupportFragmentManager().beginTransaction()
+//                    .replace(R.id.flMainContainer, EventFragment.newInstance())
+//                    .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_CLOSE)
+//                    .commit();
+            getSupportFragmentManager().beginTransaction()
+                    .replace(R.id.flMainContainer, TabsFragment.newInstance())
                     .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_CLOSE)
                     .commit();
         }
