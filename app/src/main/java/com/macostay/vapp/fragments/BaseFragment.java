@@ -15,7 +15,7 @@ import butterknife.ButterKnife;
  * Created by macostay on 02/05/2016.
  */
 public class BaseFragment extends Fragment {
-    private static String mClassName;
+    protected static String mClassName;
     protected String mIdString;
     protected int mLayoutId;
 

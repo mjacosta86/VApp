@@ -7,6 +7,8 @@ import android.support.v4.app.DialogFragment;
 import android.support.v7.app.AlertDialog;
 import android.util.Log;
 
+import com.macostay.vapp.R;
+
 /**
  * Created by macostay on 03/05/2016.
  */
@@ -17,18 +19,18 @@ public class DialogoConfirmacion extends DialogFragment {
         AlertDialog.Builder builder =
                 new AlertDialog.Builder(getActivity());
 
-        builder.setMessage("¿Desea salir de la aplicación?")
-                .setTitle("Confirmacion")
-                .setPositiveButton("Aceptar", new DialogInterface.OnClickListener()  {
+        builder.setMessage(getResources().getString(R.string.CONFIRMATION_MESSAGE))
+                .setTitle(getResources().getString(R.string.CONFIRMACION))
+                .setPositiveButton(getResources().getString(R.string.ACEPTAR), new DialogInterface.OnClickListener()  {
                     public void onClick(DialogInterface dialog, int id) {
-                        Log.i("Dialogos", "Confirmacion Aceptada.");
+                        Log.i(getResources().getString(R.string.DIALOGOS), getResources().getString(R.string.CONFIRMACION_ACEPTADA));
                         dialog.dismiss();
                         getActivity().finish();
                     }
                 })
-                .setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
+                .setNegativeButton(getResources().getString(R.string.CANCELAR), new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
-                        Log.i("Dialogos", "Confirmacion Cancelada.");
+                        Log.i(getResources().getString(R.string.DIALOGOS), getResources().getString(R.string.CONFIRMACION_CANCELADA));
                         dialog.cancel();
                     }
                 });

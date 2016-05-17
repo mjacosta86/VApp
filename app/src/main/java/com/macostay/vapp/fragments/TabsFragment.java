@@ -19,9 +19,9 @@ public class TabsFragment extends BaseFragment {
 
 
     @Bind(R.id.tlTabs)
-    TabLayout mTabs;
-    @Bind(R.id.vpContainer)
-    ViewPager mContainer;
+    TabLayout mTlTabs;
+    @Bind(R.id.vpViewPagerContainer)
+    ViewPager mVpViewPagerContainer;
 
     private TabsPagerAdapter mSectionsPagerAdapter;
 
@@ -62,8 +62,8 @@ public class TabsFragment extends BaseFragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        mContainer.setAdapter(mSectionsPagerAdapter);
-        mTabs.setupWithViewPager(mContainer);
+        mVpViewPagerContainer.setAdapter(mSectionsPagerAdapter);
+        mTlTabs.setupWithViewPager(mVpViewPagerContainer);
 
     }
 

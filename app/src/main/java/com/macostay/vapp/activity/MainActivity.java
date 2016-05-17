@@ -41,10 +41,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     Toolbar mToolbar;
     @Bind(R.id.flMainContainer)
     FrameLayout mFlMainContainer;
-    @Bind(R.id.nav_view)
-    NavigationView mNavView;
-    @Bind(R.id.drawer_layout)
-    DrawerLayout mDrawerLayout;
+    @Bind(R.id.nvNavigationView)
+    NavigationView mNvNavigationView;
+    @Bind(R.id.dlDrawerLayout)
+    DrawerLayout mDlDrawerLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,11 +56,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
 
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                this, mDrawerLayout, mToolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-        mDrawerLayout.setDrawerListener(toggle);
+                this, mDlDrawerLayout, mToolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        mDlDrawerLayout.setDrawerListener(toggle);
         toggle.syncState();
 
-        mNavView.setNavigationItemSelectedListener(this);
+        mNvNavigationView.setNavigationItemSelectedListener(this);
 
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.flMainContainer, MenuDownFragment.newInstance())
@@ -131,7 +131,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                     .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_CLOSE)
                     .commit();
         }
-        mDrawerLayout.closeDrawer(GravityCompat.START);
+        mDlDrawerLayout.closeDrawer(GravityCompat.START);
         return true;
     }
 

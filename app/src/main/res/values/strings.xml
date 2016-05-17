@@ -2,6 +2,7 @@
     <string name="app_name">VApp</string>
     <string name="action_settings">Settings</string>
     <string name="base">Base</string>
+    <string name="subtitle">android.studio@android.com</string>
 
     <string name="MENU_PEOPLE">People</string>
     <string name="MENU_COPYRIGHT">Copyright</string>
@@ -14,7 +15,17 @@
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="title_activity_tabbed">TabbedActivity</string>
     <string name="section_format">Hello World from section: %1$d</string>
-    <string name="title_activity_main2">Main2Activity</string>
+
+    <string name="ALERT_MESSAGE">Esto es un mensaje de alerta.</string>
+    <string name="CONFIRMATION_MESSAGE">¿Desea salir de la aplicación?</string>
+    <string name="INFO_MESSAGE">Información</string>
+    <string name="OK">OK</string>
+    <string name="ACEPTAR">Aceptar</string>
+    <string name="CANCELAR">Cancelar</string>
+    <string name="CONFIRMACION">Confirmación</string>
+    <string name="DIALOGOS">Dialogos</string>
+    <string name="CONFIRMACION_ACEPTADA">Confirmación aceptada</string>
+    <string name="CONFIRMACION_CANCELADA">Confirmación cancelada</string>
+
 </resources>
