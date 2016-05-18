@@ -20,8 +20,8 @@ public class ItemTabFragment extends Fragment {
      * fragment.
      */
     private static final String ARG_SECTION_NUMBER = "section_number";
-    @Bind(R.id.section_label)
-    TextView mSectionLabel;
+    @Bind(R.id.tvSectionLabel)
+    TextView mTvSectionLabel;
 
     public ItemTabFragment() {
     }
@@ -41,7 +41,7 @@ public class ItemTabFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-        View rootView = inflater.inflate(R.layout.fragment_conference, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_item_tab, container, false);
         ButterKnife.bind(this, rootView);
         return rootView;
     }
@@ -49,7 +49,7 @@ public class ItemTabFragment extends Fragment {
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        mSectionLabel.setText(getString(R.string.section_format, getArguments().getInt(ARG_SECTION_NUMBER)));
+        mTvSectionLabel.setText(getString(R.string.section_format, getArguments().getInt(ARG_SECTION_NUMBER)));
     }
 
     @Override
