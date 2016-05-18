@@ -7,4 +7,6 @@
     <color name="MENU_BUG">#FF0000</color>
     <color name="MENU_ANDROID">#31B404</color>
     <color name="MENU_INFO">#000000</color>
+
+    <color name="black">#000000</color>
 </resources>
