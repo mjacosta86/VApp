@@ -53,7 +53,7 @@ public class PeopleFragment extends BaseFragment {
         if(i >= 10){
             do{
                 i -= 10;
-            }while(i > 10);
+            }while(i >= 10);
         }
         return i;
     }
