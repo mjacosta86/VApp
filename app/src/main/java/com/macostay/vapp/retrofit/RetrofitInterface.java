@@ -8,6 +8,9 @@ import com.macostay.vapp.models.ContactData;
 import com.macostay.vapp.models.Events;
 import com.macostay.vapp.models.News;
 import com.macostay.vapp.models.Questions;
+import com.macostay.vapp.models.Usuario;
+import com.macostay.vapp.models.Usuarios;
+
 import java.util.List;
 import retrofit2.Call;
 import retrofit2.http.GET;
@@ -20,7 +23,11 @@ public interface RetrofitInterface {
     //Aqui irían todos los callbacks para cada una de las peticiones
 
     @GET(RetrofitApi.CLIENTES)//Lista de clientes
-    Call<List<Cliente>> getCliente();
+    Call<List<Cliente>> getClientes();
+
+    //Lista de usuarios
+    @GET(RetrofitApi.USUARIOS)
+    Call<List<Usuario>> getUsuarios();
 
     @GET(RetrofitApi.EVENTS)//Eventos
     Call<Events> getEvents();

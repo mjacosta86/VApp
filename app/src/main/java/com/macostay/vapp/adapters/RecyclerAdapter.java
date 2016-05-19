@@ -6,7 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import com.macostay.vapp.R;
-import com.macostay.vapp.models.People;
+import com.macostay.vapp.models.Person;
 
 import java.util.ArrayList;
 
@@ -16,7 +16,7 @@ import java.util.ArrayList;
 public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.PeoplesViewHolder> implements View.OnClickListener{
 
     private View.OnClickListener listener;
-    private ArrayList<People> mPeoples;
+    private ArrayList<Person> mPeoples;
 
     public static class PeoplesViewHolder extends RecyclerView.ViewHolder {
 
@@ -30,13 +30,13 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.People
             txtSubtitulo = (TextView)itemView.findViewById(R.id.LblSubTitulo);
         }
 
-        public void bindTitular(People p) {
+        public void bindTitular(Person p) {
             txtTitulo.setText(p.getNombre());
             txtSubtitulo.setText(p.getFechaNacimiento());
         }
     }
 
-    public RecyclerAdapter(ArrayList<People> peoples){
+    public RecyclerAdapter(ArrayList<Person> peoples){
         this.mPeoples = peoples;
     }
 
@@ -55,7 +55,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.People
 
     @Override
     public void onBindViewHolder(PeoplesViewHolder viewHolder, int pos) {
-        People item = mPeoples.get(pos);
+        Person item = mPeoples.get(pos);
 
         viewHolder.bindTitular(item);
     }

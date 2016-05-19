@@ -8,7 +8,7 @@ import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
 import com.macostay.vapp.R;
-import com.macostay.vapp.models.People;
+import com.macostay.vapp.models.Person;
 
 import java.util.ArrayList;
 
@@ -19,11 +19,11 @@ import butterknife.ButterKnife;
  * Created by macostay on 18/05/2016.
  */
 
-public class ListItemAdapter extends ArrayAdapter<People> {
+public class ListItemAdapter extends ArrayAdapter<Person> {
 
-    ArrayList<People> mPeoples;
+    ArrayList<Person> mPeoples;
 
-    public ListItemAdapter(Context context, ArrayList<People> peoples) {
+    public ListItemAdapter(Context context, ArrayList<Person> peoples) {
         super(context, R.layout.list_item, peoples);
         mPeoples = peoples;
     }

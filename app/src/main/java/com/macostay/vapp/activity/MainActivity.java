@@ -29,6 +29,8 @@ import com.macostay.vapp.models.ContactData;
 import com.macostay.vapp.models.Events;
 import com.macostay.vapp.models.News;
 import com.macostay.vapp.models.Questions;
+import com.macostay.vapp.models.Usuario;
+import com.macostay.vapp.models.Usuarios;
 import com.macostay.vapp.retrofit.RetrofitListener;
 import java.util.List;
 import butterknife.Bind;
@@ -68,6 +70,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 .commit();
 
 //        Retrofit Tests
+        Usuarios();
 //        Clientes();
 //        Events();
 //        Actions();
@@ -152,6 +155,22 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         VAppApplication.getRetrofitApi().getClientes(new RetrofitListener.ResponseListener<Response<List<Cliente>>>() {
             @Override
             public void onResponse(Response<List<Cliente>> response) {
+                // Recogemos la informacion del servicio
+                Toast.makeText(getApplicationContext(),response.body().toString(), Toast.LENGTH_LONG).show();
+            }
+        }, new RetrofitListener.ErrorListener(){
+            @Override
+            public void onErrorResponse(Throwable error) {
+                //Recogemos el error
+                Toast.makeText(getApplicationContext(),error.toString(), Toast.LENGTH_LONG).show();
+            }
+        });
+    }
+
+    public void Usuarios(){
+        VAppApplication.getRetrofitApi().getUsuarios(new RetrofitListener.ResponseListener<Response<List<Usuario>>>() {
+            @Override
+            public void onResponse(Response<List<Usuario>> response) {
                 // Recogemos la informacion del servicio
                 Toast.makeText(getApplicationContext(),response.body().toString(), Toast.LENGTH_LONG).show();
             }

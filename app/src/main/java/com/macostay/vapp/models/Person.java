@@ -6,7 +6,7 @@ import android.os.Parcelable;
 /**
  * Created by macostay on 18/05/2016.
  */
-public class People implements Parcelable {
+public class Person implements Parcelable {
 
     private int id;
     private String dni;
@@ -16,10 +16,10 @@ public class People implements Parcelable {
     private int edad;
     private String lugarNacimiento;
 
-    public People() {
+    public Person() {
     }
 
-    public People(int id, String dni, String nombre, String apellidos, String fechaNacimiento, int edad, String lugarNacimiento) {
+    public Person(int id, String dni, String nombre, String apellidos, String fechaNacimiento, int edad, String lugarNacimiento) {
         this.id = id;
         this.dni = dni;
         this.nombre = nombre;
@@ -87,7 +87,7 @@ public class People implements Parcelable {
 
     @Override
     public String toString() {
-        return "People{" +
+        return "Person{" +
                 "id=" + id +
                 ", dni='" + dni + '\'' +
                 ", nombre='" + nombre + '\'' +
@@ -115,7 +115,7 @@ public class People implements Parcelable {
         dest.writeString(this.lugarNacimiento);
     }
 
-    protected People(Parcel in) {
+    protected Person(Parcel in) {
         this.id = in.readInt();
         this.dni = in.readString();
         this.nombre = in.readString();
@@ -125,15 +125,15 @@ public class People implements Parcelable {
         this.lugarNacimiento = in.readString();
     }
 
-    public static final Parcelable.Creator<People> CREATOR = new Parcelable.Creator<People>() {
+    public static final Parcelable.Creator<Person> CREATOR = new Parcelable.Creator<Person>() {
         @Override
-        public People createFromParcel(Parcel source) {
-            return new People(source);
+        public Person createFromParcel(Parcel source) {
+            return new Person(source);
         }
 
         @Override
-        public People[] newArray(int size) {
-            return new People[size];
+        public Person[] newArray(int size) {
+            return new Person[size];
         }
     };
 }

@@ -5,10 +5,10 @@ import android.os.Bundle;
 import android.widget.ListView;
 import com.macostay.vapp.R;
 import com.macostay.vapp.adapters.ListItemAdapter;
-import com.macostay.vapp.models.People;
+import com.macostay.vapp.models.Person;
+
 import java.util.ArrayList;
 import butterknife.Bind;
-import butterknife.ButterKnife;
 
 /**
  * Created by macostay on 29/04/2016.
@@ -40,7 +40,7 @@ public class PeopleFragment extends BaseFragment {
     @Override
     public void loadUITexts() {
 
-        ArrayList<People> peoples = llenarArray();
+        ArrayList<Person> peoples = llenarArray();
 
         ListItemAdapter peopleListItemArray =
                 new ListItemAdapter(getActivity().getApplicationContext(), peoples);
@@ -58,15 +58,15 @@ public class PeopleFragment extends BaseFragment {
         return i;
     }
 
-    public ArrayList<People> llenarArray(){
+    public ArrayList<Person> llenarArray(){
 
-        ArrayList<People> peopleArrayList = new ArrayList<>();
+        ArrayList<Person> peopleArrayList = new ArrayList<>();
 
         for (int i = 0; i < 40; ++i) {
 
             int anno = restarIndice(i);
 
-            People p = new People(i + 1,        //id
+            Person person = new Person(i + 1,        //id
                     "00000000" + i + "-A",      //dni
                     "Nombre" + i,               //nombre
                     "Apellidos" + i,            //apellidos
@@ -74,7 +74,7 @@ public class PeopleFragment extends BaseFragment {
                     i + 1,                      //edad
                     "Cadiz");                   //lugar de nacimiento
 
-            peopleArrayList.add(p);
+            peopleArrayList.add(person);
         }
         return peopleArrayList;
     }

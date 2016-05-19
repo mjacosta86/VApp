@@ -8,6 +8,9 @@ import com.macostay.vapp.models.ContactData;
 import com.macostay.vapp.models.Events;
 import com.macostay.vapp.models.News;
 import com.macostay.vapp.models.Questions;
+import com.macostay.vapp.models.Usuario;
+import com.macostay.vapp.models.Usuarios;
+
 import java.util.List;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -21,6 +24,7 @@ public class RetrofitApi {
     //La URL del endpoint
     public static final String ENDPOINT = "http://servicio-monkydevs.rhcloud.com";
     public static final String ENDPOINT_TEST = "http://54.197.255.238";
+    public static final String ENDPOINT_HOSTINGER = "http://mjacosta86.esy.es";
 
     //La URL de los recursos
     public static final String CLIENTES = "/clientes";
@@ -30,19 +34,21 @@ public class RetrofitApi {
     public static final String CONTACT_DATA = "/mocks/Mediolanum/json/getContactData.json";
     public static final String GAMING = "/mocks/Mediolanum/json/getGaming.json";
     public static final String NEWS = "/mocks/Mediolanum/json/getNews.json";
+    public static final String USUARIOS = "/CursoAndroid/consulta_completa.php";
 
     private RetrofitInterface service;
 
     public RetrofitApi(){
-        //service = ServiceGenerator.createService(RetrofitInterface.class, ENDPOINT);
-        service = ServiceGenerator.createService(RetrofitInterface.class, ENDPOINT_TEST);
+//        service = ServiceGenerator.createService(RetrofitInterface.class, ENDPOINT);
+//        service = ServiceGenerator.createService(RetrofitInterface.class, ENDPOINT_TEST);
+        service = ServiceGenerator.createService(RetrofitInterface.class, ENDPOINT_HOSTINGER);
     }
 
 
     public void getClientes(final RetrofitListener.ResponseListener responseListener,
                             final RetrofitListener.ErrorListener error){
 
-        Call<List<Cliente>> call = service.getCliente();
+        Call<List<Cliente>> call = service.getClientes();
         call.enqueue(new Callback<List<Cliente>>() {
             @Override
             public void onResponse(Call<List<Cliente>> call, Response<List<Cliente>> response) {
@@ -54,7 +60,23 @@ public class RetrofitApi {
                 error.onErrorResponse(t);
             }
         });
+    }
 
+    public void getUsuarios(final RetrofitListener.ResponseListener responseListener,
+                            final RetrofitListener.ErrorListener error){
+
+        Call<List<Usuario>> call = service.getUsuarios();
+        call.enqueue(new Callback<List<Usuario>>() {
+            @Override
+            public void onResponse(Call<List<Usuario>> call, Response<List<Usuario>> response) {
+                responseListener.onResponse(response);
+            }
+
+            @Override
+            public void onFailure(Call<List<Usuario>> call, Throwable t) {
+                error.onErrorResponse(t);
+            }
+        });
 
     }
 
