@@ -20,6 +20,11 @@ public class Usuario implements Parcelable {
         this.telefono = telefono;
     }
 
+    public Usuario(String nombre, String telefono) {
+        this.nombre = nombre;
+        this.telefono = telefono;
+    }
+
     public int getId() {
         return id;
     }

@@ -13,7 +13,9 @@ import com.macostay.vapp.models.Usuarios;
 
 import java.util.List;
 import retrofit2.Call;
+import retrofit2.http.Body;
 import retrofit2.http.GET;
+import retrofit2.http.POST;
 
 /**
  * Created by macostay on 04/05/2016.
@@ -28,6 +30,10 @@ public interface RetrofitInterface {
     //Lista de usuarios
     @GET(RetrofitApi.USUARIOS)
     Call<List<Usuario>> getUsuarios();
+
+    //Insertar un nuevo usuario
+    @POST(RetrofitApi.ADD_USUARIO)
+    Call<Usuario> setUsuario(@Body Usuario usuario);
 
     @GET(RetrofitApi.EVENTS)//Eventos
     Call<Events> getEvents();

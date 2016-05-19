@@ -71,6 +71,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
 //        Retrofit Tests
         Usuarios();
+//        setUsuario();
 //        Clientes();
 //        Events();
 //        Actions();
@@ -181,6 +182,22 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 Toast.makeText(getApplicationContext(),error.toString(), Toast.LENGTH_LONG).show();
             }
         });
+    }
+
+    public void setUsuario(){
+        VAppApplication.getRetrofitApi().setUsuario(new RetrofitListener.ResponseListener<Response<Usuario>>() {
+            @Override
+            public void onResponse(Response<Usuario> response) {
+                // Recogemos la informacion del servicio
+                Toast.makeText(getApplicationContext(),response.body().toString(), Toast.LENGTH_LONG).show();
+            }
+        }, new RetrofitListener.ErrorListener(){
+            @Override
+            public void onErrorResponse(Throwable error) {
+                //Recogemos el error
+                Toast.makeText(getApplicationContext(),error.toString(), Toast.LENGTH_LONG).show();
+            }
+        }, new Usuario("Pablito","3453245"));
     }
 
     public void Events(){
