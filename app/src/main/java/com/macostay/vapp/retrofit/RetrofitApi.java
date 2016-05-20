@@ -1,6 +1,5 @@
 package com.macostay.vapp.retrofit;
 
-
 import com.macostay.vapp.models.Actions;
 import com.macostay.vapp.models.Agenda;
 import com.macostay.vapp.models.Cliente;
@@ -9,8 +8,6 @@ import com.macostay.vapp.models.Events;
 import com.macostay.vapp.models.News;
 import com.macostay.vapp.models.Questions;
 import com.macostay.vapp.models.Usuario;
-import com.macostay.vapp.models.Usuarios;
-
 import java.util.List;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -34,11 +31,8 @@ public class RetrofitApi {
     public static final String CONTACT_DATA = "/mocks/Mediolanum/json/getContactData.json";
     public static final String GAMING = "/mocks/Mediolanum/json/getGaming.json";
     public static final String NEWS = "/mocks/Mediolanum/json/getNews.json";
-    public static final String USUARIOS = "/CursoAndroid/consulta_completa.php";
-    public static final String ADD_USUARIO = "/CursoAndroid/registro.php";
-    //Pruebas para añadir un usuario
-    //public static final String ADD_USUARIO_GET = "/CursoAndroid/registro.php?nombres=Pablito&telefono=213421";
-    //public static final String SQL = "http://mjacosta86.esy.es/CursoAndroid/registro.php?nombres=Pablito&telefono=213421";
+    public static final String USUARIOS = "/CursoAndroid/select.php";
+    public static final String ADD_USUARIO = "/CursoAndroid/insert.php";
 
     private RetrofitInterface service;
 
@@ -84,11 +78,13 @@ public class RetrofitApi {
 
     }
 
-    public void setUsuario(final RetrofitListener.ResponseListener responseListener,
-                           final RetrofitListener.ErrorListener error,
-                           Usuario usuario){
 
-        Call<Usuario> call = service.setUsuario(usuario);
+    public void insertarUsuario(final RetrofitListener.ResponseListener responseListener,
+                                final RetrofitListener.ErrorListener error,
+                                Usuario newUsuario){
+
+        Call<Usuario> call = service.insertarUsuario(newUsuario.getNombre(), newUsuario.getTelefono());
+
         call.enqueue(new Callback<Usuario>() {
             @Override
             public void onResponse(Call<Usuario> call, Response<Usuario> response) {
@@ -101,6 +97,24 @@ public class RetrofitApi {
             }
         });
     }
+
+//    public void setUsuario(final RetrofitListener.ResponseListener responseListener,
+//                           final RetrofitListener.ErrorListener error,
+//                           Usuario usuario){
+//
+//        Call<Usuario> call = service.setUsuario(usuario);
+//        call.enqueue(new Callback<Usuario>() {
+//            @Override
+//            public void onResponse(Call<Usuario> call, Response<Usuario> response) {
+//                responseListener.onResponse(response);
+//            }
+//
+//            @Override
+//            public void onFailure(Call<Usuario> call, Throwable t) {
+//                error.onErrorResponse(t);
+//            }
+//        });
+//    }
 
     public void getEvents(final RetrofitListener.ResponseListener responseListener,
                           final RetrofitListener.ErrorListener error){

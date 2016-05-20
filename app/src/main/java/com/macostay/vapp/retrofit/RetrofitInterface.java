@@ -1,6 +1,5 @@
 package com.macostay.vapp.retrofit;
 
-
 import com.macostay.vapp.models.Actions;
 import com.macostay.vapp.models.Agenda;
 import com.macostay.vapp.models.Cliente;
@@ -9,11 +8,10 @@ import com.macostay.vapp.models.Events;
 import com.macostay.vapp.models.News;
 import com.macostay.vapp.models.Questions;
 import com.macostay.vapp.models.Usuario;
-import com.macostay.vapp.models.Usuarios;
-
 import java.util.List;
 import retrofit2.Call;
-import retrofit2.http.Body;
+import retrofit2.http.Field;
+import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
 
@@ -32,8 +30,13 @@ public interface RetrofitInterface {
     Call<List<Usuario>> getUsuarios();
 
     //Insertar un nuevo usuario
+//    @POST(RetrofitApi.ADD_USUARIO)
+//    Call<Usuario> setUsuario(@Body Usuario usuario);
+
+    //Inserta un nuevo usuario en la base de datos
+    @FormUrlEncoded
     @POST(RetrofitApi.ADD_USUARIO)
-    Call<Usuario> setUsuario(@Body Usuario usuario);
+    Call<Usuario> insertarUsuario(@Field("nombres") String nombres, @Field("telefono") String telefono);
 
     @GET(RetrofitApi.EVENTS)//Eventos
     Call<Events> getEvents();
